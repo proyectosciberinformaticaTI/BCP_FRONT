@@ -1,0 +1,33 @@
+<mat-card>Edicion de Tipo de Cambio</mat-card>
+
+<br>
+
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmtipoCambio="ngForm">
+
+  <div [hidden]="true">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="ID" required formControlName="id">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Moneda Origen" required formControlName="monedaOrigen">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Moneda Destino" required formControlName="monedaDestino">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tipo Cambio" required formControlName="tipoCambio">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="frmtipoCambio.invalid">
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+  <button mat-raised-button color="accent" routerLink='/tipo-cambio' type="button">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+</form>
